@@ -597,3 +597,7 @@ cursor: pointer;
     text-decoration: none;
     color: inherit;
 }
+
+.video-info #line-break {
+    white-space: nowrap;
+}
