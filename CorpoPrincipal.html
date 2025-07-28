@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clone-Youtube.Dio</title>
+    <link rel="stylesheet" href="assets/css/Styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/Images/Ícone Youtube.png" type="image/x-icon">
+    <script src="Function.js"></script>
+</head>
+
+<body>
+    <header>
+        <section class="top-bar">
+            <section class="top-bar-left">
+                <div class="menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <section class="youtube-logo">
+                    <img src="assets/Images/Ícone Youtube.png" alt="Logo do Youtube">
+                    <span class="youtube-text">YouTube <sup> BR </sup></span>
+                </section>
+            </section>
+
+            <section class="search-bar">
+                <form action="https://www.youtube.com/results" method="get">
+                    <input type="text" name="search_query" placeholder="Pesquisar" id="search-input">
+                    <button id="button-search" type="submit" disabled>
+                        <img src="assets/Images/Ícone lupa 2.png" alt="Ícone de pesquisa" width="20" height="16">
+                    </button> 
+                </form>
+                <span id="microphone" class="material-icons microphone" title="Microfone">mic</span>
+                <span id="keyboard" class="material-icons keyboard" title="Teclado virtual">keyboard</span>
+            </section>
+             <section class="top-bar-create">
+                <button id="button-create">
+                    <span class="icon-create-top-bar">+</span>
+                    <span class="text-create-top-bar">Criar</span>
+                </button>
+            </section>
+
+             <div class="notification">
+                <i class="material-icons">notifications_none</i>
+                <span class="badge">9+</span>
+            </div>
+            <section class="logo-dev">
+                <picture>
+                    <img src="assets/Images/Ícones top logo.png" alt="Ícone do canal do desenvolvedor">
+                </picture>
+            </section>
+        </section>
+    </header>
+
+    <main>
+        <section class="first-column">
+            <section class="main-video">
+                <iframe src="https://www.youtube.com/embed/iCSUIAqBeEM?si=SbEaG8_eiLW3fP55" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </section>
+
+            <section class="video-description">
+                <h2>Rotina REAL de Um PROGRAMADOR Full Stack (faculdade, trabalho, realidade)</h2>
+                <section class="logo">
+                    <picture>
+                        <img src="assets/Images/logo canal.png" alt="Informações do canal">
+                    </picture>
+                    <p class="title">Algoritmo & Café</p>
+                    <p class="subscribers">11,3 mil inscritos</p>
+                </section>
+            </section>
+
+            <section class="interactive-buttons-left">
+                <button id="button-1">Seja membro</button>
+                <button id="button-2">Inscrever-se</button>
+            </section>
+
+            <section class="interactive-buttons-right">
+                <button id="button-3">
+                    <span class="material-icons">thumb_up</span>
+                    <span class="likes">2,4 mil</span>
+                    <span class="vertical-line"></span>
+                </button>
+                <button id="button-4">
+                    <span id="icon-deslike" class="material-icons">thumb_down</span>
+                </button>
+                <button id="button-5">
+                    <span id="icon-share" class="material-icons">reply</span>
+                    <span class="text-share">Compartilhar</span>
+                </button>
+                <button id="button-6">
+                    <span id="icon-download" class="material-icons">file_download</span>
+                    <span class="text-download">Download</span>
+                </button>
+                <button id="button-7">
+                    <span id="icon-three-points" class="material-icons">more_horiz</span>
+                </button>
+            </section>
+
+            <section class="video-stats">
+                <p class="views">32.125 mil visualizações &nbsp; 8 de jun. de 2025</p>
+                <p class="description">
+                    🎥 Descubra como é a rotina real de um programador Full Stack! Neste vídeo, você vai acompanhar o dia a dia completo: desde os estudos na faculdade até os desafios no ambiente de trabalho. Veja a realidade por trás do código, os momentos de foco, as tarefas de desenvolvimento e como equilibrar tudo com a vida pessoal. Uma visão autêntica da jornada de quem vive tecnologia todos os dias!
+                </p>
+            </section>
+        </section>
+
+        <section class="second-column">
+            <a href="https://www.youtube.com/watch?v=b7_aAOzDaSY&list=RDb7_aAOzDaSY&start_radio=1" target="_blank">
+            <section class="video">
+                <img class="thumbnail" src="assets/Images/imagem video opcional 1.png" alt="thumb">
+                <div class="video-info">
+                    <div class="title">HIT DO ANO - O Peso da Luta <br>
+                    (GR6 Explode) Perera DJ, DJ... 
+                    </div>
+                    <div class="channel"> GR6 EXPLODE</div>
+                    <div class="views">201 mi de visualizações <b> · </b> há 4 anos</div>
+                </div>
+            </section>
+            </a>
+                <a href="https://www.youtube.com/watch?v=QPTxy-9ttc4" target="_blank">
+                    <section class="video">
+                    <img class="thumbnail" src="assets/Images/imagem video opcional 2.png" alt="thumb">
+                    <div class="video-info">
+                        <div class="title" abbr title="Como eu aprendi PROGRAMAÇÃO e consegui meu PRIMEIRO EMPREGO com 17 anos">Como eu aprendi <br> PROGRAMAÇÃO e consegui ...</abbr>
+                        </div>
+                        <div class="channel">Larissa Kich</div>
+                        <div class="views">44 mil visualizações <b> · </b> há 1 mês</div>
+                    </div>
+                </section>
+                </a>
+                
+                <a href="https://www.youtube.com/watch?v=VKVHDnMopkc&list=RDVKVHDnMopkc&start_radio=1&pp=oAcB" target="_blank">
+                    <section class="video">
+                        <img class="thumbnail" src="assets/Images/imagem video opcional 3.png" alt="thumb">
+                        <div class="video-info">
+                            <div class="title" abbr title="ORUAM, REAL FUBA, DIDI, LUANZIN, NEO BEATS & VICTOR WAO - THE BOX MEDLEY FUNK 6">ORUAM, REAL FUBA, DIDI, <br> LUANZIN, NEO BEATS & ...</abbr>
+                            </div>
+                            <div class="channel">THE BOX</div>
+                            <div class="views">29 mi de visualizações <b> · </b> há 1 mês</div>
+                        </div>
+                    </section>
+                </a>
+
+                <a href="https://www.youtube.com/watch?v=XEhwcrPviRI" target="_blank">
+                    <section class="video">
+                        <img class="thumbnail" src="assets/Images/imagem video opcional 4.png" alt="thumb">
+                        <div class="video-info">
+                            <div class="title" abbr title="Estude programação em SILÊNCIO e EVOLUA absurdamente">Estude programação em <br> SILÊNCIO e EVOLUA ...</abbr>
+                            </div>
+                            <div class="channel">Coffers dev</div>
+                            <div id="alignment" class="views">5 mil visualizações <b> · </b> há 1 mês</div>
+                        </div>
+                    </section>
+                </a>
+
+                <a href="https://www.youtube.com/watch?v=PkaDMFFLftY" target="_blank">
+                    <section class="video">
+                        <img class="thumbnail" src="assets/Images/imagem video opcional 5.png" alt="thumb">
+                        <div class="video-info">
+                            <div class="title" abbr title="É por isso que VOCÊ NÃO consegue EMPREGO como PROGRAMADOR (o que fazer)">É por isso que VOCÊ NÃO <br> consegue EMPREGO como ...</abbr>
+                            </div>
+                            <div class="channel">Algoritmo & Café</div>
+                            <div class="views">201 mi visualizações <b> · </b> há 1 mês</div>
+                        </div>
+                    </section>
+                </a>
+
+                <a href="https://www.youtube.com/watch?v=YJ7p-dBrkRE" target="_blank">
+                    <section class="video">
+                        <img class="thumbnail" src="assets/Images/imagem video opcional 6.png" alt="thumb">
+                        <div class="video-info">
+                            <div class="title" abbr title="Um dia na vida de um ENGENHEIRO DE SOFTWARE no MAIOR banco da América Latina!">Um dia na vida de um <br> ENGENHEIRO DE SOFTWARE ...</abbr>
+                            </div>
+                            <div class="channel">Souza DEV</div>
+                            <div class="views">57 mil visualizações <b> · </b> há 3 meses</div>
+                        </div>
+                    </section>
+                </a>
+
+                <a href="https://www.youtube.com/watch?v=KnA7pyTPKPs" target="_blank">
+                    <section class="video">
+                        <img class="thumbnail" src="assets/Images/imagem video opcional 7.png" alt="thumb">
+                        <div class="video-info">
+                            <div class="title" abbr title="Me dê 14 minutos e vou Destruir a Sua Procrastinação">Me dê 14 minutos e vou <br> Destruir a Sua Procrastinação</abbr>
+                            </div>
+                            <div class="channel">Reservatório de Dopamina</div>
+                            <div class="views">372 mil visualizações <b> · </b> há 1 mês</div>
+                        </div>
+                    </section>
+                </a>
+
+                <a href="https://www.youtube.com/watch?v=cxAAixqfvXw" target="_blank">
+                    <section class="video">
+                        <img class="thumbnail" src="assets/Images/imagem video opcional 8.png" alt="thumb">
+                        <div class="video-info">
+                            <div class="title" abbr title="Hackeando na Prática: Invadindo um Servidor">Hackeando na Prática: <br> Invadindo um Servidor</abbr>
+                            </div>
+                            <div class="channel">Mentalidade Hacker</div>
+                            <div class="views">463 mil visualizações <b> · </b> há 6 meses</div>
+                        </div>
+                    </section>
+                </a>
+
+                <a href="https://www.youtube.com/watch?v=r7_UfoC53Qo" target="_blank">
+                    <section class="video">
+                        <img class="thumbnail" src="assets/Images/imagem video opcional 9.png" alt="thumb">
+                        <div class="video-info">
+                            <div class="title" abbr title="Rotina como Programador Full Stack Junior SEM A PRESSÃO da faculdade">Rotina como Programador Full <br> Stack Junior SEM A PRESSÃO ...</abbr>
+                            </div>
+                            <div class="channel">Algoritmo & Café</div>
+                            <div class="views">4 mil visualizações <b> · </b> há 3 semanas</div>
+                        </div>
+                    </section>
+                </a>
+
+                <a href="https://www.youtube.com/watch?v=C6QbAV1rlxM&list=RDC6QbAV1rlxM&start_radio=1&pp=oAcB" target="_blank">
+                    <section class="video">
+                        <img class="thumbnail" src="assets/Images/imagem video opcional 10.png" alt="thumb">
+                        <div class="video-info">
+                            <div class="title" abbr title="Manifesto #1 A Rua Cercada Por Divisão - Oruam, Real Fubá, Mc Poze do Rodo (prod. Elow)">Manifesto #1 A Rua Cercada <br> Por Divisão - Oruam, Real Fub ...</abbr>
+                            <div class="channel">Mainstreet Records</div>
+                            <div class="views">1,5 mi de visualizações <b> · </b> há 2 dias</div>
+                        </div>
+                    </section>
+                </a>
+    </main>
+<footer></footer>
+</body>
+</html>
