@@ -2,103 +2,94 @@
     font-family: 'roboto', sans-serif;
 }
 
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 59px;
-    background-color: white;
-    display: flex;
-    align-items: center;
-    padding: 0 16px;
+html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
 }
 
 .top-bar {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f9f9f9;
     position: fixed;
-    background-color: white;
-    right: 25px;
+    top: 0;
+    width: 96.3vw;
+    height: 56px;                  
+}
+
+.top-bar-left, .top-bar-right {
+    display: flex;
+    align-items: center;
+    height: 100%;
 }
 
 .menu-icon {
-    width: 23px;
-    height: 16px;
+    border-radius: 10px;
+    width: 11px;
+    height: 10px;
+    padding: 8px;
+    cursor: pointer;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    cursor: pointer;
-    margin: 10px;
-    margin-left: -3rem;
-    position: absolute;
-    border-radius: 39%;
-    transition: background-color 0.3s, box-shadow 0.3s;
+    gap: 4px;
+    margin-right: 0.1px;
+    transition: background-color 0.3s, box-shadow 0.2s;
 }
 
 .menu-icon:hover {
-    background-color:  #d4d3d3b4;
-    box-shadow: 0 0 0 9px #d4d3d3b4;
+    background-color: #d4d3d3b4;
+    box-shadow: 0 0 0 3px #d4d3d3b4;
+}
+
+.menu-icon:active {
+    box-shadow: 0 0 0 0.1px #c4c2c2c9;
 }
 
 .menu-icon span {
-    height: 1px;
-    background-color: #0c0101a9;
-    border-radius: 2px;
-    margin: 2px;
+    width: 20px;
+    height: 2px;
+    margin-left: -1.9px;
+    background-color: #333333c4;
 }
 
 .youtube-logo {
     display: flex;
-    align-items: center; 
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
 }
 
 .youtube-logo img {
-    width: 35px;
-    height: 35px;
+    width: 36px;
+    height: 36px;
+    margin-left: 16px;
 }
 
 .youtube-text {
-    margin-left: 3px;
+    font-size: 1.1rem;
     font-weight: bold;
 }
 
 .youtube-text sup {
-    font-size: xx-small;
-    font-weight: normal;
-    color: rgb(79, 82, 82);
-}
-
-.top-bar-left {
-    margin-left: -101.1rem;
-    position: absolute;
-}
-
-.top-bar-left:hover {
-    cursor: pointer;
+    font-size: 0.7rem;
+    color: #888;
 }
 
 .search-bar {
     display: flex;
     align-items: center;
-    position: absolute;
-    margin-left: -25.8rem;
+    margin: 0 20px;
 }
 
 .search-bar input[type="text"] {
-    width: 514px;
-    height: 40px;
-    padding: 0 11px;
+    transition: width 0.3s ease;
+    width: 400px;
+    padding: 8px;
     border: 1px solid #ccc;
-    border-radius: 20px 0 0 20px;
-    font-size: medium;
-    position: relative;
-    right: 646px;
-    margin-left: 0.5px;
-    margin-right: 56px;
-    padding-left: 14px;
+    border-radius: 4px;
 }
 
 .search-bar input[type="text"]:focus {
@@ -106,166 +97,147 @@ header {
     outline: none;
 }
 
-.material-icons {
-    position: absolute;
-    right: 66px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    color: #0c010165;
-}
-
-.search-bar button[type="submit"] {
-    width: 3.8rem;
-    height: 42px;
-    border: 1px solid #ccc;
-    border-left: transparent;
-    cursor: pointer;
-    border-radius: 0 20px 20px 0;
-    background-color: #faf6f694;
-    position: absolute;
-    right: 642px;
-}
-
-.search-bar button[type="submit"]:focus {
-    border-right: #0760b9;
-    outline: none;
-}
-
-#keyboard {
-    position: absolute;
-    margin-right: 40.2rem;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    color: #0c010165;
-}
-
-#button-search:hover {
-    background-color: #d4d3d359;
-
-}
-
-#microphone {
-    margin-right: 32.6rem;
-    top: 50%;
-    background-color: #f1f1f1;
-    border: transparent;
-    width: 39px;
-    height: 39px;
-    border-radius: 100%;
-    color: rgba(7, 0, 0, 0.884);
-    align-content: center;
+#input-button-search {
     display: flex;
+}
+
+.search-bar #microphone {
+    border-radius: 40px;
+    background-color: #f1f1f1;
+    width: 6px;
+    height: 9px;
+    margin-left: 12px;
+    padding: 15px;
     align-items: center;
+    display: flex;
     justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.2s;
 }
 
-#microphone:hover {
+.search-bar #microphone:hover {
     background-color: #d4d3d3b4;
+    box-shadow: 0 0 0 3px #d4d3d3b4;
 }
 
-#microphone:active {
-    background-color: #c4c2c2c9;
+.search-bar #microphone:active {
+    box-shadow: 0 0 0 0.1px #c4c2c2c9;
 }
 
 .top-bar-create {
-    margin-right: -0.2rem;
+    width: 6px;
+    height: 9px;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 15px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 
-#button-create {
+.top-bar-create #button-create {
+    border-radius: 15px;
+    border: none;
+    background-color: #f1f1f1;
     display: flex;
+    padding: 11px 10px;
     align-items: center;
     justify-content: center;
-    width: 5rem;
-    height: 2.5rem;
-    background-color: #f1f1f1;
-    border: 1px solid transparent;
-    border-radius: 20px;
+    gap: 8px;
+    height: 38px;
+    transition: background-color 0.3s, box-shadow 0.2s;
     cursor: pointer;
-    position: relative;
 }
 
-.icon-create-top-bar {
-    margin-right: 3.5rem;
-    font-size: 20px;  
-}
-
-.text-create-top-bar {
-    margin-left: -3.1rem;
-    font-weight: 600;   
-    font-size: 16px;
-    margin-right: 6px;
-}
-
-#button-create:hover {
-    cursor: pointer;
+.top-bar-create #button-create:hover {
     background-color: #d4d3d3b4;
+    box-shadow: 0 0 0 3px #d4d3d3b4;
 }
 
-#button-create:active {
-    background-color: #c4c2c2c9;
+.top-bar-create #button-create:active {
+    box-shadow: 0 0 0 0.1px #c4c2c2c9;
+}
+
+.top-bar-create #button-create .icon-create-top-bar {
+    font-size: 1.7rem;
+    color: #202020;
+}
+
+.top-bar-create #button-create .text-create-top-bar {
+    font-weight: bold;
 }
 
 .notification {
-    position: relative;
-    display: inline-block;
-    padding: 10px;
-    border-radius: 50%;
-    transition: background-color 0.3s, box-shadow 0.3s;
-    background-color: transparent;
+    display: flex;
+    margin-left: 13px;
+    transition: background-color 0.3s, box-shadow 0.2s;
+    cursor: pointer;
+    border-radius: 20px;
+    width: 30px;
+    height: 30px;
 }
 
 .notification:hover {
-    background-color: #f0f0f0;
-    box-shadow: 0 0 0 8px #d4d3d3b4;
+    background-color: #d4d3d3b4;
+    box-shadow: 0 0 0 3px #d4d3d3b4;
 }
 
 .notification:active {
-    box-shadow: 0 0 0 1px  #c4c2c2c9;    
+    box-shadow: 0 0 0 0.1px #c4c2c2c9;
 }
 
 .notification i {
-    font-size: 24px;
-    color: black;
-    margin-right: -4rem;
+    font-size: 1.5rem;
+    color: #202020;
 }
 
-.badge {
-    position: absolute;
-    top: 0px;
-    right: -0.7rem;
+.notification .badge {
     background-color: red;
     color: white;
-    font-size: 12px;
-    font-weight: bold;
+    border-radius: 50%;
     padding: 2px 5px;
-    border-radius: 50px;
-    margin-top: -0.3rem;
-    cursor: pointer;
+    height: 17px;
+    font-size: 0.8rem;
+    display: flex;
+    margin-top: -6px;
+    margin-left: -10px;
 }
 
 .logo-dev {
-    margin-right: 0.1rem;
+    display: flex;
+    padding: 9px;
+    cursor: pointer;
+    margin-left: 6px;
+}
+
+.main-video {
+    padding-top: 60px;
+    display: flex;
+    width: 100vw;
+    margin-left: 70px;
+    background: transparent;
 }
 
 .main-video iframe {
-    width: 70.7%;
-    height: 720px;
-    margin: 80px;
-    margin-left: 80px;
-    border-radius: 10px;
+    display: block;
+    width: 100%;
+    max-width: 1280px;
+    aspect-ratio: 16/9;
+    height: auto;
+    margin: 32px 0 0 0;
+    border-radius: 18px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+    background: #000;
 }
 
 .video-description h2 {
     font-size: larger;
     text-align: start;
-    margin-top: -69px;
-    margin-left: 80px;
+    margin-left: 74px;
 }
 
 .video-description picture {
-    margin-left: 75px;
+    margin-left: 74px;
 }
 
 .logo {
@@ -299,7 +271,6 @@ header {
     font-weight: bold;
     background-color: #f1f1f1;
     cursor: pointer;
-    position: relative;
 }
 
 #button-1:hover {
@@ -335,8 +306,8 @@ header {
 .video-stats {
     margin-left: 77px;
     background-color: #f1f1f1;
-    max-width: 1300px;
-    height: 6.6rem;
+    max-width: 1260px;
+    height: 5.6rem;
     border-radius: 10px;
     margin-top: 1.2rem;
     padding: 14px;
@@ -348,7 +319,7 @@ header {
 }
 
 .video-stats .views:hover {
-cursor: pointer;
+    cursor: pointer;
 }
 
 .video-stats .description:hover {
@@ -357,34 +328,39 @@ cursor: pointer;
 
 .interactive-buttons-right {
     justify-self: center;
-    margin-top: -3.1rem;
-    margin-left: 29rem;
+    margin-top: -2.4rem;
+    margin-left: 22.5rem;
+    display: flex;
 }
 
 #button-3 {
     border-radius: 20px 0 0 20px;
-    width: 120px;
-    height: 35px;
-    border: 1px solid transparent;
-    font-size: 14px;
-    font-weight: 500;
-    color: #0f0f0f;
+    width: 130px;
+    height: 40px;
+    border: 0.1px solid transparent;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
     background-color: #f1f1f1;
     cursor: pointer;
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#button-3 span {
-    margin-right: 1rem;
+#icon-like {
+    margin-left: -15px;
 }
 
-#button-3 .likes {
-    margin-left: 1.9rem;
-    padding: 0.2rem;
+.likes {
+    margin-left: 9px;
 }
 
-#button-3 .vertical-line {
-    border-right: 1px solid rgba(112, 111, 111, 0.397);
+.vertical-line {
+    display: inline-block;
+    width: 1px;
+    height: 24px;
+    background-color: #d3d3d3;
+    margin-left: 15px;
 }
 
 #button-3:hover {
@@ -397,21 +373,21 @@ cursor: pointer;
 
 #button-4 {
     border-radius: 0 20px 20px 0;
-    width: 56px;
-    height: 35px;
-    top: 0.7rem;
+    width: 60px;
+    height: 40px;
+    margin-left: -28.1px;
     border: 0.1px solid transparent;
-    font-size: 14px;
-    font-weight: 500;
-    color: #0f0f0f;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
     background-color: #f1f1f1;
     cursor: pointer;
-    position: relative;
-    right: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#button-4 span {
-    margin-right: 1rem;
+#icon-deslike {
+    margin-left: -12px;
 }
 
 #button-4:hover {
@@ -422,32 +398,24 @@ cursor: pointer;
     background-color: #c4c2c2c9;
 }
 
-#icon-deslike {
-    left: 0.6rem;
-}
-
 #button-5 {
     border-radius: 20px;
-    width: 135px;
-    height: 35px;
-    margin-left: -17px;
-    border: 1px solid transparent;
-    font-size: 14px;
-    font-weight: 500;
-    color: #0f0f0f;
+    width: 130px;
+    height: 40px;
+    border: 0.1px solid transparent;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
     background-color: #f1f1f1;
     cursor: pointer;
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
 }
 
 #icon-share {
     transform: scaleX(-1);
-    margin-top: -0.8rem;
-    margin-right: 2.2rem;
-}
-
-.text-share {
-    margin-left: 1rem;
+    margin-left: -10px;
 }
 
 #button-5:hover {
@@ -460,24 +428,25 @@ cursor: pointer;
 
 #button-6 {
     border-radius: 20px;
-    width: 125px;
-    height: 35px;
-    margin-left: 0.4rem;
-    border: 1px solid transparent;
-    font-size: 14px;
-    font-weight: 500;
-    color: #0f0f0f;
+    width: 110px;
+    height: 40px;
+    border: 0.1px solid transparent;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
     background-color: #f1f1f1;
     cursor: pointer;
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
 }
 
 #icon-download {
-    margin-right: 1.6rem;
+    margin-left: 1px;
 }
 
 .text-download {
-    margin-left: 1.3rem;
+    padding: 6px;
 }
 
 #button-6:hover {
@@ -490,21 +459,17 @@ cursor: pointer;
 
 #button-7 {
     border-radius: 20px;
-    width: 35px;
-    height: 35px;
-    border: 1px solid transparent;
-    font-size: 14px;
-    font-weight: 500;
-    color: #0f0f0f;
+    width: 40px;
+    height: 40px;
+    border: 0.1px solid transparent;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
     background-color: #f1f1f1;
     cursor: pointer;
-    position: relative;
-    top: 0.7rem;
-    margin-left: 0.4rem;
-}
-
-#icon-three-points {
-    left: 0.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
 }
 
 #button-7:hover {
@@ -533,7 +498,7 @@ cursor: pointer;
     justify-items: end;
     justify-self: end;
     margin-top: -59.8rem;
-    margin-right: 4.6rem;
+    margin-right: 6.6rem;
 }
 
 .video {
@@ -601,3 +566,1070 @@ cursor: pointer;
 .video-info #line-break {
     white-space: nowrap;
 }
+
+ /* RESPONSIVIDADE */
+
+@media (max-width: 576px) { 
+    .menu-icon span {
+        width: 16px;
+        height: 0.9px;
+    }
+    
+    .youtube-logo img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .youtube-text {
+        font-size: 0.9rem;
+        display: flex;
+    }
+
+    .youtube-text sup {
+        font-size: 0.6rem;
+        display: flex;
+        padding-left: 5px;
+    }
+
+    .search-bar #search-input {
+        width: 62px;
+        border-radius: 20px;
+        transition: width 0.9s ease;
+    }
+
+    .search-bar #button-search {
+        display: none;
+    }
+
+    .search-bar #keyboard {
+        display: none;
+    }
+
+    .search-bar #microphone {
+        border-radius: 40px;
+        background-color: #f1f1f1;
+        width: 6px;
+        height: 9px;
+        margin-left: 12px;
+        padding: 15px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s, box-shadow 0.2s;
+    }
+
+    .search-bar #microphone:hover {
+        background-color: #d4d3d3b4;
+        box-shadow: 0 0 0 3px #d4d3d3b4;
+    }
+
+    .search-bar #microphone:active {
+        box-shadow: 0 0 0 0.1px #c4c2c2c9;
+    }
+
+    .top-bar-right {
+        display: flex;
+    }
+
+    .top-bar-create {
+        width: 6px;
+        height: 9px;
+        margin-right: 10px;
+        margin-left: 10px;
+        padding: 15px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .top-bar-create #button-create {
+        border-radius: 15px;
+        border: none;
+        background-color: #f1f1f1;
+        display: flex;
+        padding: 11px 10px;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        height: 38px;
+        transition: background-color 0.3s, box-shadow 0.2s;
+        cursor: pointer;
+    }
+
+    .top-bar-create #button-create:hover {
+        background-color: #d4d3d3b4;
+        box-shadow: 0 0 0 3px #d4d3d3b4;
+    }
+
+    .top-bar-create #button-create:active {
+        box-shadow: 0 0 0 0.1px #c4c2c2c9;
+    }
+
+    .top-bar-create #button-create .icon-create-top-bar {
+        font-size: 1.7rem;
+        color: #202020;
+    }
+
+    .top-bar-create #button-create .text-create-top-bar {
+        font-weight: bold;
+    }
+
+    .notification {
+        display: flex;
+        margin-left: 13px;
+        transition: background-color 0.3s, box-shadow 0.2s;
+        cursor: pointer;
+        border-radius: 20px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .notification:hover {
+        background-color: #d4d3d3b4;
+        box-shadow: 0 0 0 3px #d4d3d3b4;
+    }
+
+    .notification:active {
+        box-shadow: 0 0 0 0.1px #c4c2c2c9;
+    }
+
+    .notification i {
+        font-size: 1.5rem;
+        color: #202020;
+    }
+
+    .notification .badge {
+        background-color: red;
+        color: white;
+        border-radius: 50%;
+        padding: 2px 5px;
+        height: 17px;
+        font-size: 0.8rem;
+        display: flex;
+        margin-top: -6px;
+        margin-left: -10px;
+    }
+
+    .logo-dev {
+        display: flex;
+        padding: 9px;
+        cursor: pointer;
+        margin-left: 6px;
+    }
+
+    .main-video {
+        width: 91vw;
+        margin-left: 1rem;
+        margin-top: 1rem;
+        display: flex;
+        background: transparent;
+    }
+
+    .main-video iframe {
+        max-width: 100vw;
+        margin: 0;
+        border-radius: 18px;
+    }
+
+    .video-description h2 {
+        font-size: 18px;
+        margin-left: 20px;
+    }
+
+    .video-description .logo {
+        margin-left: -57px;
+        margin-top: 10px;
+    }
+
+       .interactive-buttons-left {
+        display: flex;
+        width: 100vw;
+        max-width: 100vw;
+        margin: 1rem 0 0 0;
+        margin-left: 29rem;
+        margin-top: -50px;
+    }
+
+    .interactive-buttons-right {
+        display: flex;
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+
+    #button-5,
+    #button-6,
+    #button-7 {
+        margin-left: 7px;
+    }
+
+    .video-stats {
+        margin-left: -1px;
+        height: 150px;
+    }
+
+    .second-column {
+        text-align: end;
+        justify-content: end;
+        justify-items: end;
+        justify-self: end;
+        margin-top: 0.2rem;
+        margin-right: 5rem;
+    }
+    
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+    .menu-icon {
+        width: 16px;
+        height: 15px;
+        padding: 10px;
+        background-color: #550eb1;
+        margin-left: -19px;
+    }
+
+    .youtube-logo img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .youtube-text {
+        font-size: 1rem;
+        display: flex;
+    }
+
+    .youtube-text sup {
+        font-size: 0.6rem;
+        display: flex;
+        padding-left: 5px;
+    }
+
+    .search-bar #search-input {
+        width: 115px;
+        height: 22px;
+        border-radius: 20px 0 0 20px;
+        transition: width 0.9s ease;
+    }
+
+    .search-bar #button-search {
+        height: 40px;
+        width: 54px;
+        border-radius: 0 20px 20px 0;
+        border: 1px solid #ccc;
+        border-left: none;
+    }
+
+    .search-bar img {
+        margin-top: -8px;
+        margin-right: 5px;
+    }
+
+    .search-bar #keyboard {
+        display: flex;
+        position: absolute;
+        margin-left: 6.4rem;
+        color: #20202088;
+        cursor: pointer;
+    }
+
+    .search-bar #microphone {
+        border-radius: 40px;
+        background-color: #f1f1f1;
+        width: 6px;
+        height: 9px;
+        margin-left: 7px;
+        padding: 15px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s, box-shadow 0.2s;
+    }
+
+    .search-bar #microphone:hover {
+        background-color: #d4d3d3b4;
+        box-shadow: 0 0 0 3px #d4d3d3b4;
+    }
+
+    .search-bar #microphone:active {
+        box-shadow: 0 0 0 0.1px #c4c2c2c9;
+    }
+
+    .top-bar-right {
+        display: flex;
+        margin-left: -1.6rem;
+    }
+
+    .top-bar-create {
+        width: 6px;
+        height: 9px;
+        margin-right: 10px;
+        margin-left: 10px;
+        padding: 15px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .top-bar-create #button-create {
+        border-radius: 15px;
+        border: none;
+        background-color: #f1f1f1;
+        display: flex;
+        padding: 11px 10px;
+        margin-left: 29px;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        height: 38px;
+        width: 60px;
+        transition: background-color 0.3s, box-shadow 0.2s;
+        cursor: pointer;
+    }
+
+    .top-bar-create #button-create:hover {
+        background-color: #d4d3d3b4;
+        box-shadow: 0 0 0 3px #d4d3d3b4;
+    }
+
+    .top-bar-create #button-create:active {
+        box-shadow: 0 0 0 0.1px #c4c2c2c9;
+    }
+
+    .top-bar-create #button-create .icon-create-top-bar {
+        font-size: 1.7rem;
+        color: #202020;
+    }
+
+    .top-bar-create #button-create .text-create-top-bar {
+        font-weight: bold;
+    }
+
+    .notification {
+        display: flex;
+        margin-left: 20px;
+        transition: background-color 0.3s, box-shadow 0.2s;
+        cursor: pointer;
+        border-radius: 20px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .notification:hover {
+        background-color: #d4d3d3b4;
+        box-shadow: 0 0 0 3px #d4d3d3b4;
+    }
+
+    .notification:active {
+        box-shadow: 0 0 0 0.1px #c4c2c2c9;
+    }
+
+    .notification i {
+        font-size: 1.5rem;
+        color: #202020;
+    }
+
+    .notification .badge {
+        background-color: red;
+        color: white;
+        border-radius: 50%;
+        padding: 2px 5px;
+        height: 17px;
+        font-size: 0.8rem;
+        display: flex;
+        margin-top: -6px;
+        margin-left: -10px;
+    }
+
+    .logo-dev {
+        display: flex;
+        padding: 4px;
+        cursor: pointer;
+        margin-left: 6px;
+    }
+
+    .main-video {
+        width: 92vw;
+        margin-left: 1.2rem;
+        margin-top: 1rem;
+        display: flex;
+        background: transparent;
+    }
+
+    .main-video iframe {
+        max-width: 100vw;
+        margin: 0;
+        border-radius: 18px;
+    }
+
+        .video-description h2 {
+        font-size: 18px;
+        margin-left: 20px;
+    }
+
+    .video-description .logo {
+        margin-left: -57px;
+        margin-top: 10px;
+    }
+
+       .interactive-buttons-left {
+        display: flex;
+        width: 100vw;
+        max-width: 100vw;
+        margin: 1rem 0 0 0;
+        margin-left: 29rem;
+        margin-top: -50px;
+    }
+
+    .interactive-buttons-right {
+        display: flex;
+        margin-top: 10px;
+        margin-left: -70px;
+    }
+
+    #button-5,
+    #button-6,
+    #button-7 {
+        margin-left: 7px;
+    }
+
+    .video-stats {
+        margin-left: -1px;
+        height: 150px;  
+    }
+
+    .second-column {
+        text-align: end;
+        justify-content: end;
+        justify-items: end;
+        justify-self: end;
+        margin-top: 0.2rem;
+        margin-right: 10rem;
+    }
+
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .menu-icon {
+        width: 16px;
+        height: 15px;
+        padding: 10px;
+        background-color: #ee0a29;
+    }
+
+    .youtube-logo img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .youtube-text {
+        font-size: 1.1rem;
+        display: flex;
+    }
+
+    .youtube-text sup {
+        font-size: 0.6rem;
+        display: flex;
+        padding-left: 5px;
+    }
+
+    .search-bar #search-input {
+        width: 225px;
+        height: 22px;
+        border-radius: 20px 0 0 20px;
+        transition: width 0.9s ease;
+    }
+
+    .search-bar #button-search {
+        height: 40px;
+        width: 54px;
+        border-radius: 0 20px 20px 0;
+        border: 1px solid #ccc;
+        border-left: none;
+    }
+
+    .search-bar img {
+        margin-top: -8px;
+        margin-right: 5px;
+    }
+
+    .search-bar #keyboard {
+        display: flex;
+        position: absolute;
+        margin-left: 13.2rem;
+        color: #20202088;
+        cursor: pointer;
+    }
+
+    .search-bar #microphone {
+        border-radius: 40px;
+        background-color: #f1f1f1;
+        width: 6px;
+        height: 9px;
+        margin-left: 12px;
+        padding: 15px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s, box-shadow 0.2s;
+    }
+
+    .search-bar #microphone:hover {
+        background-color: #d4d3d3b4;
+        box-shadow: 0 0 0 3px #d4d3d3b4;
+    }
+
+    .search-bar #microphone:active {
+        box-shadow: 0 0 0 0.1px #c4c2c2c9;
+    }
+
+    .top-bar-right {
+        display: flex;
+        margin-left: -0.5rem;
+    }
+
+    .top-bar-create {
+        width: 6px;
+        height: 9px;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    .top-bar-create #button-create {
+        border-radius: 15px;
+        border: none;
+        background-color: #f1f1f1;
+        display: flex;
+        padding: 11px 10px;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        height: 38px;
+        transition: background-color 0.3s, box-shadow 0.2s;
+        cursor: pointer;
+    }
+
+    .top-bar-create #button-create:hover {
+        background-color: #d4d3d3b4;
+        box-shadow: 0 0 0 3px #d4d3d3b4;
+    }
+
+    .top-bar-create #button-create:active {
+        box-shadow: 0 0 0 0.1px #c4c2c2c9;
+    }
+
+    .top-bar-create #button-create .icon-create-top-bar {
+        font-size: 1.7rem;
+        color: #202020;
+    }
+
+    .top-bar-create #button-create .text-create-top-bar {
+        font-weight: bold;
+    }
+
+    .notification {
+        display: flex;
+        margin-left: 13px;
+        transition: background-color 0.3s, box-shadow 0.2s;
+        cursor: pointer;
+        border-radius: 20px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .notification:hover {
+        background-color: #d4d3d3b4;
+        box-shadow: 0 0 0 3px #d4d3d3b4;
+    }
+
+    .notification:active {
+        box-shadow: 0 0 0 0.1px #c4c2c2c9;
+    }
+
+    .notification i {
+        font-size: 1.5rem;
+        color: #202020;
+    }
+
+    .notification .badge {
+        background-color: red;
+        color: white;
+        border-radius: 50%;
+        padding: 2px 5px;
+        height: 17px;
+        font-size: 0.8rem;
+        display: flex;
+        margin-top: -6px;
+        margin-left: -10px;
+    }
+
+    .logo-dev {
+        display: flex;
+        padding: 9px;
+        cursor: pointer;
+        margin-left: 6px;
+    }
+
+        .main-video {
+        width: 96.3vw;
+        margin-left: 0.5rem;
+        margin-top: 1rem;
+        display: flex;
+        background: transparent;
+    }
+
+    .main-video iframe {
+        max-width: 100vw;
+        margin: 0;
+        border-radius: 18px;
+    }
+
+        .video-description h2 {
+        font-size: 18px;
+        margin-left: 20px;
+    }
+
+    .video-description .logo {
+        margin-left: -57px;
+        margin-top: 10px;
+    }
+
+       .interactive-buttons-left {
+        display: flex;
+        width: 100vw;
+        max-width: 100vw;
+        margin: 1rem 0 0 0;
+        margin-left: 29rem;
+        margin-top: -50px;
+    }
+
+    .interactive-buttons-right {
+        display: flex;
+        margin-top: 10px;
+        margin-left: -260px;
+    }
+
+    #button-5,
+    #button-6,
+    #button-7 {
+        margin-left: 7px;
+    }
+
+    .video-stats {
+        margin-left: -1px;
+        height: 105px;
+    }
+
+    .second-column {
+        text-align: end;
+        justify-content: end;
+        justify-items: end;
+        justify-self: end;
+        margin-top: 0.2rem;
+        margin-right: 22rem;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .menu-icon {
+        width: 16px;
+        height: 15px;
+        padding: 10px;
+        background-color: #b9ad05;
+    }
+
+    .youtube-logo img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .youtube-text {
+        font-size: 1.1rem;
+        display: flex;
+    }
+
+    .youtube-text sup {
+        font-size: 0.6rem;
+        display: flex;
+        padding-left: 5px;
+    }
+
+    .search-bar #search-input {
+        width: 300px;
+        height: 22px;
+        border-radius: 20px 0 0 20px;
+        transition: width 0.9s ease;
+    }
+
+    .search-bar #button-search {
+        height: 40px;
+        width: 54px;
+        border-radius: 0 20px 20px 0;
+        border: 1px solid #ccc;
+        border-left: none;
+    }
+
+    .search-bar img {
+        margin-top: -8px;
+        margin-right: 5px;
+    }
+
+    .search-bar #keyboard {
+        display: flex;
+        position: absolute;
+        margin-left: 17.9rem;
+        color: #20202088;
+        cursor: pointer;
+    }
+
+    .search-bar #microphone {
+        border-radius: 40px;
+        background-color: #f1f1f1;
+        width: 6px;
+        height: 9px;
+        margin-left: 12px;
+        padding: 15px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s, box-shadow 0.2s;
+    }
+
+    .search-bar #microphone:hover {
+        background-color: #d4d3d3b4;
+        box-shadow: 0 0 0 3px #d4d3d3b4;
+    }
+
+    .search-bar #microphone:active {
+        box-shadow: 0 0 0 0.1px #c4c2c2c9;
+    }
+
+    .top-bar-right {
+        display: flex;
+    }
+
+    .top-bar-create {
+        width: 6px;
+        height: 9px;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    .top-bar-create #button-create {
+        border-radius: 15px;
+        border: none;
+        background-color: #f1f1f1;
+        display: flex;
+        padding: 11px 10px;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        height: 38px;
+        transition: background-color 0.3s, box-shadow 0.2s;
+        cursor: pointer;
+    }
+
+    .top-bar-create #button-create:hover {
+        background-color: #d4d3d3b4;
+        box-shadow: 0 0 0 3px #d4d3d3b4;
+    }
+
+    .top-bar-create #button-create:active {
+        box-shadow: 0 0 0 0.1px #c4c2c2c9;
+    }
+
+    .top-bar-create #button-create .icon-create-top-bar {
+        font-size: 1.7rem;
+        color: #202020;
+    }
+
+    .top-bar-create #button-create .text-create-top-bar {
+        font-weight: bold;
+    }
+
+    .notification {
+        display: flex;
+        margin-left: 13px;
+        transition: background-color 0.3s, box-shadow 0.2s;
+        cursor: pointer;
+        border-radius: 20px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .notification:hover {
+        background-color: #d4d3d3b4;
+        box-shadow: 0 0 0 3px #d4d3d3b4;
+    }
+
+    .notification:active {
+        box-shadow: 0 0 0 0.1px #c4c2c2c9;
+    }
+
+    .notification i {
+        font-size: 1.5rem;
+        color: #202020;
+    }
+
+    .notification .badge {
+        background-color: red;
+        color: white;
+        border-radius: 50%;
+        padding: 2px 5px;
+        height: 17px;
+        font-size: 0.8rem;
+        display: flex;
+        margin-top: -6px;
+        margin-left: -10px;
+    }
+
+    .logo-dev {
+        display: flex;
+        padding: 9px;
+        cursor: pointer;
+        margin-left: 6px;
+    }
+
+        .main-video {
+        width: 97.1vw;
+        margin-left: 0.7rem;
+        margin-top: 1rem;
+        display: flex;
+        background: transparent;
+    }
+
+    .main-video iframe {
+        max-width: 100vw;
+        margin: 0;
+        border-radius: 18px;
+    }
+
+        .video-description h2 {
+        font-size: 18px;
+        margin-left: 20px;
+    }
+
+    .video-description .logo {
+        margin-left: -57px;
+        margin-top: 10px;
+    }
+
+       .interactive-buttons-left {
+        display: flex;
+        width: 100vw;
+        max-width: 100vw;
+        margin: 1rem 0 0 0;
+        margin-left: 29rem;
+        margin-top: -50px;
+    }
+
+    .interactive-buttons-right {
+        display: flex;
+        margin-top: 10px;
+        margin-left: -500px;
+    }
+
+    #button-5,
+    #button-6,
+    #button-7 {
+        margin-left: 7px;
+    }
+
+    .video-stats {
+        margin-left: -1px;
+        height: 105px;
+        max-width: 1400px;
+    }
+
+    .second-column {
+        text-align: end;
+        justify-content: end;
+        justify-items: end;
+        justify-self: end;
+        margin-top: 0.2rem;
+        margin-right: 38rem;
+    }
+}
+
+@media (min-width: 1441px) {
+    .menu-icon {
+        width: 16px;
+        height: 15px;
+        padding: 10px;
+        background-color: #190af3;
+    }
+
+    .youtube-logo img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .youtube-text {
+        font-size: 1.1rem;
+        display: flex;
+    }
+
+    .youtube-text sup {
+        font-size: 0.6rem;
+        display: flex;
+        padding-left: 5px;
+    }
+
+    .search-bar #search-input {
+        width: 450px;
+        height: 22px;
+        border-radius: 20px 0 0 20px;
+        transition: width 0.9s ease;
+    }
+
+    .search-bar #button-search {
+        height: 40px;
+        width: 54px;
+        border-radius: 0 20px 20px 0;
+        border: 1px solid #ccc;
+        border-left: none;
+    }
+
+    .search-bar img {
+        margin-top: -8px;
+        margin-right: 5px;
+    }
+
+    .search-bar #keyboard {
+        display: flex;
+        position: absolute;
+        margin-left: 27.3rem;
+        color: #20202088;
+        cursor: pointer;
+    }
+
+    .search-bar #microphone {
+        border-radius: 40px;
+        background-color: #f1f1f1;
+        width: 6px;
+        height: 9px;
+        margin-left: 12px;
+        padding: 15px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s, box-shadow 0.2s;
+    }
+
+    .search-bar #microphone:hover {
+        background-color: #d4d3d3b4;
+        box-shadow: 0 0 0 3px #d4d3d3b4;
+    }
+
+    .search-bar #microphone:active {
+        box-shadow: 0 0 0 0.1px #c4c2c2c9;
+    }
+
+    .top-bar-right {
+        display: flex;
+    }
+
+    .top-bar-create {
+        width: 6px;
+        height: 9px;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    .top-bar-create #button-create {
+        border-radius: 15px;
+        border: none;
+        background-color: #f1f1f1;
+        display: flex;
+        padding: 11px 10px;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        height: 38px;
+        transition: background-color 0.3s, box-shadow 0.2s;
+        cursor: pointer;
+    }
+
+    .top-bar-create #button-create:hover {
+        background-color: #d4d3d3b4;
+        box-shadow: 0 0 0 3px #d4d3d3b4;
+    }
+
+    .top-bar-create #button-create:active {
+        box-shadow: 0 0 0 0.1px #c4c2c2c9;
+    }
+
+    .top-bar-create #button-create .icon-create-top-bar {
+        font-size: 1.7rem;
+        color: #202020;
+    }
+
+    .top-bar-create #button-create .text-create-top-bar {
+        font-weight: bold;
+    }
+
+    .notification {
+        display: flex;
+        margin-left: 13px;
+        transition: background-color 0.3s, box-shadow 0.2s;
+        cursor: pointer;
+        border-radius: 20px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .notification:hover {
+        background-color: #d4d3d3b4;
+        box-shadow: 0 0 0 3px #d4d3d3b4;
+    }
+
+    .notification:active {
+        box-shadow: 0 0 0 0.1px #c4c2c2c9;
+    }
+
+    .notification i {
+        font-size: 1.5rem;
+        color: #202020;
+    }
+
+    .notification .badge {
+        background-color: red;
+        color: white;
+        border-radius: 50%;
+        padding: 2px 5px;
+        height: 17px;
+        font-size: 0.8rem;
+        display: flex;
+        margin-top: -6px;
+        margin-left: -10px;
+    }
+
+    .logo-dev {
+        display: flex;
+        padding: 9px;
+        cursor: pointer;
+        margin-left: 6px;
+    }
+
+        .main-video {
+        display: flex;
+        width: 100vw;
+        background: transparent;
+    }
+
+    .main-video iframe {
+        display: block;
+        width: 100%;
+        max-width: 1280px;
+        aspect-ratio: 16/9;
+        height: auto;
+        margin: 32px 0 0 0;
+        border-radius: 18px;
+        box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+        background: #000;
+    }
+} /* FINAL RESPONSIVIDADE */
+

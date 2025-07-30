@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clone-Youtube.Dio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/Images/Ícone Youtube.png" type="image/x-icon">
+    <script src="Function.js"></script>
+    <style>
+        * {
+        font-family: 'roboto', sans-serif;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .top-bar-left, .top-bar-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .menu-icon {
+            border-radius: 10px;
+            width: 11px;
+            height: 10px;
+            padding: 8px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            margin-right: 0.1px;
+            transition: background-color 0.3s, box-shadow 0.2s;
+        }
+
+        .menu-icon:hover {
+            background-color:  #d4d3d3b4;
+            box-shadow: 0 0 0 3px #d4d3d3b4;
+        }
+
+        .menu-icon:active {
+            box-shadow: 0 0 0 0.1px  #c4c2c2c9;
+        }
+
+        .menu-icon span {
+            width: 20px;
+            height: 2px;
+            margin-left: -1.9px;
+            background-color: #333333c4;
+        }
+
+        .youtube-logo {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            cursor: pointer;
+            transition: transform 0.5s ease;
+        }
+
+        .youtube-logo img {
+            width: 36px;
+            height: 36px;;
+            margin-left: 16px;
+        }
+
+        .youtube-text {
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .youtube-text sup {
+            font-size: 0.7rem;
+            color: #888;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            margin: 0 20px;
+        }
+
+        .search-bar input[type="text"] {
+            transition: width 0.3s ease;
+            width: 400px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .search-bar input[type="text"]:focus {
+            border-color: #0760b9;
+            outline: none;
+        }
+
+        #input-button-search{
+            display: flex;
+        }
+
+        .search-bar #microphone {
+                border-radius: 40px;
+                background-color: #f1f1f1;
+                width: 6px;
+                height: 9px;
+                margin-left: 12px;
+                padding: 15px;
+                align-items: center;
+                display: flex;
+                justify-content: center;
+                cursor: pointer;
+                transition: background-color 0.3s, box-shadow 0.2s;
+            }
+
+            .search-bar #microphone:hover {
+                background-color: #d4d3d3b4;
+                box-shadow: 0 0 0 3px #d4d3d3b4; 
+            }
+
+            .search-bar #microphone:active {
+                box-shadow: 0 0 0 0.1px #c4c2c2c9;
+            }
+
+            .top-bar-create {
+                width: 6px;
+                height: 9px;
+                margin-right: 10px;
+                margin-left: 10px;
+                padding: 15px;
+                align-items: center;
+                display: flex;
+                justify-content: center;
+            }
+
+            .top-bar-create #button-create {
+                border-radius: 15px;
+                border: none;
+                background-color: #f1f1f1;
+                display: flex;
+                padding: 11px 10px;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                height: 38px;
+                transition: background-color 0.3s, box-shadow 0.2s;
+                cursor: pointer;
+            }
+
+            .top-bar-create #button-create:hover {
+                background-color: #d4d3d3b4;
+                box-shadow: 0 0 0 3px #d4d3d3b4;
+            }
+
+            .top-bar-create #button-create:active {
+                box-shadow: 0 0 0 0.1px #c4c2c2c9;
+            }
+
+            .top-bar-create #button-create .icon-create-top-bar {
+                font-size: 1.7rem;
+                color: #202020;
+            }
+
+            .top-bar-create #button-create .text-create-top-bar {
+                font-weight: bold;
+            }
+
+            .notification {
+                display: flex;
+                margin-left: 13px;
+                transition: background-color 0.3s, box-shadow 0.2s;
+                cursor: pointer;
+                border-radius: 20px;
+                width: 30px;
+                height: 30px;
+            }
+
+            .notification:hover {
+                background-color: #d4d3d3b4;
+                box-shadow: 0 0 0 3px #d4d3d3b4;
+            }
+            
+            .notification:active {
+                box-shadow: 0 0 0 0.1px #c4c2c2c9;
+            }
+
+            .notification i {
+                font-size: 1.5rem;
+                color: #202020;
+            }
+
+            .notification .badge {
+                background-color: red;
+                color: white;
+                border-radius: 50%;
+                padding: 2px 5px;
+                height: 17px;
+                font-size: 0.8rem;
+                display: flex;
+                margin-top: -6px;
+                margin-left: -10px;
+            }
+
+        @media (max-width: 576px) {
+            .menu-icon span {
+                width: 16px;
+                height: 0.9px;
+            }
+
+            .youtube-logo img {
+                width: 30px;
+                height: 30px;
+            }
+
+            .youtube-text {
+                font-size: 0.9rem;
+                display: flex;
+            }
+
+            .youtube-text sup {
+                font-size: 0.6rem;
+                display: flex;
+                padding-left: 5px;
+            }
+
+            .search-bar #search-input {
+                width: 62px;
+                border-radius: 20px;
+                transition: width 0.9s ease;
+            }
+
+            .search-bar #button-search {
+                display: none;
+            }
+
+            .search-bar #keyboard {
+                display: none;
+            }
+
+            .search-bar #microphone {
+                border-radius: 40px;
+                background-color: #f1f1f1;
+                width: 6px;
+                height: 9px;
+                margin-left: 12px;
+                padding: 15px;
+                align-items: center;
+                display: flex;
+                justify-content: center;
+                cursor: pointer;
+                transition: background-color 0.3s, box-shadow 0.2s;
+            }
+
+            .search-bar #microphone:hover {
+                background-color: #d4d3d3b4;
+                box-shadow: 0 0 0 3px #d4d3d3b4; 
+            }
+
+            .search-bar #microphone:active {
+                box-shadow: 0 0 0 0.1px #c4c2c2c9;
+            }
+
+            .top-bar-right {
+                display: flex;
+            }
+
+            .top-bar-create {
+                width: 6px;
+                height: 9px;
+                margin-right: 10px;
+                margin-left: 10px;
+                padding: 15px;
+                align-items: center;
+                display: flex;
+                justify-content: center;
+            }
+
+            .top-bar-create #button-create {
+                border-radius: 15px;
+                border: none;
+                background-color: #f1f1f1;
+                display: flex;
+                padding: 11px 10px;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                height: 38px;
+                transition: background-color 0.3s, box-shadow 0.2s;
+                cursor: pointer;
+            }
+
+            .top-bar-create #button-create:hover {
+                background-color: #d4d3d3b4;
+                box-shadow: 0 0 0 3px #d4d3d3b4;
+            }
+
+            .top-bar-create #button-create:active {
+                box-shadow: 0 0 0 0.1px #c4c2c2c9;
+            }
+
+            .top-bar-create #button-create .icon-create-top-bar {
+                font-size: 1.7rem;
+                color: #202020;
+            }
+
+            .top-bar-create #button-create .text-create-top-bar {
+                font-weight: bold;
+            }
+
+            .notification {
+                display: flex;
+                margin-left: 13px;
+                transition: background-color 0.3s, box-shadow 0.2s;
+                cursor: pointer;
+                border-radius: 20px;
+                width: 30px;
+                height: 30px;
+            }
+
+            .notification:hover {
+                background-color: #d4d3d3b4;
+                box-shadow: 0 0 0 3px #d4d3d3b4;
+            }
+            
+            .notification:active {
+                box-shadow: 0 0 0 0.1px #c4c2c2c9;
+            }
+
+            .notification i {
+                font-size: 1.5rem;
+                color: #202020;
+            }
+
+            .notification .badge {
+                background-color: red;
+                color: white;
+                border-radius: 50%;
+                padding: 2px 5px;
+                height: 17px;
+                font-size: 0.8rem;
+                display: flex;
+                margin-top: -6px;
+                margin-left: -10px;
+            }
+
+            .logo-dev {
+                display: flex;
+                padding: 9px;
+                cursor: pointer;
+                margin-left: 6px;
+            }
+        }
+
+            @media (min-width: 577px) and (max-width: 768px) {
+                .menu-icon {
+                width: 16px;
+                height: 15px;
+                padding: 10px;
+                background-color: #550eb1;
+                margin-left: -19px;
+            }
+
+                .youtube-logo img {
+                width: 32px;
+                height: 32px;
+            }
+
+            .youtube-text {
+                font-size: 1rem;
+                display: flex;
+            }
+
+            .youtube-text sup {
+                font-size: 0.6rem;
+                display: flex;
+                padding-left: 5px;
+            }
+
+            .search-bar #search-input {
+                width: 115px;
+                height: 22px;
+                border-radius: 20px 0 0 20px;
+                transition: width 0.9s ease;
+            }
+
+            .search-bar #button-search {
+                height: 40px;
+                width: 54px;
+                border-radius: 0 20px 20px 0;
+                border: 1px solid #ccc;
+                border-left: none;
+
+            }
+
+            .search-bar img {
+                margin-top: -8px;
+                margin-right: 5px;
+            }
+
+            .search-bar #keyboard {
+                display: flex;
+                position: absolute;
+                margin-left: 6.4rem;
+                color: #20202088;
+                cursor: pointer;
+            }
+
+            .search-bar #microphone {
+                border-radius: 40px;
+                background-color: #f1f1f1;
+                width: 6px;
+                height: 9px;
+                margin-left: 7px;
+                padding: 15px;
+                align-items: center;
+                display: flex;
+                justify-content: center;
+                cursor: pointer;
+                transition: background-color 0.3s, box-shadow 0.2s;
+            }
+
+            .search-bar #microphone:hover {
+                background-color: #d4d3d3b4;
+                box-shadow: 0 0 0 3px #d4d3d3b4; 
+
+            }
+
+            .search-bar #microphone:active {
+                box-shadow: 0 0 0 0.1px #c4c2c2c9;
+            }
+
+            .top-bar-right {
+                display: flex;
+                margin-left: -1.6rem;
+            }
+
+            .top-bar-create {
+                width: 6px;
+                height: 9px;
+                margin-right: 10px;
+                margin-left: 10px;
+                padding: 15px;
+                align-items: center;
+                display: flex;
+                justify-content: center;
+            }
+
+            .top-bar-create #button-create {
+                border-radius: 15px;
+                border: none;
+                background-color: #f1f1f1;
+                display: flex;
+                padding: 11px 10px;
+                margin-left: 29px;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                height: 38px;
+                width: 60px;
+                transition: background-color 0.3s, box-shadow 0.2s;
+                cursor: pointer;
+            }
+
+            .top-bar-create #button-create:hover {
+                background-color: #d4d3d3b4;
+                box-shadow: 0 0 0 3px #d4d3d3b4;
+            }
+
+            .top-bar-create #button-create:active {
+                box-shadow: 0 0 0 0.1px #c4c2c2c9;
+            }
+
+            .top-bar-create #button-create .icon-create-top-bar {
+                font-size: 1.7rem;
+                color: #202020;
+            }
+
+            .top-bar-create #button-create .text-create-top-bar {
+                font-weight: bold;
+            }
+
+            .notification {
+                display: flex;
+                margin-left: 20px;
+                transition: background-color 0.3s, box-shadow 0.2s;
+                cursor: pointer;
+                border-radius: 20px;
+                width: 30px;
+                height: 30px;
+            }
+
+            .notification:hover {
+                background-color: #d4d3d3b4;
+                box-shadow: 0 0 0 3px #d4d3d3b4;
+            }
+
+            .notification:active {
+                box-shadow: 0 0 0 0.1px #c4c2c2c9;
+            }
+
+            .notification i {
+                font-size: 1.5rem;
+                color: #202020;
+            }
+
+            .notification .badge {
+                background-color: red;
+                color: white;
+                border-radius: 50%;
+                padding: 2px 5px;
+                height: 17px;
+                font-size: 0.8rem;
+                display: flex;
+                margin-top: -6px;
+                margin-left: -10px;
+            }
+
+            .logo-dev {
+                display: flex;
+                padding: 9px;
+                cursor: pointer;
+                margin-left: 6px;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .menu-icon {
+                width: 16px;
+                height: 15px;
+                padding: 10px;
+                background-color: #ee0a29;
+            }
+
+            .youtube-logo img {
+                width: 35px;
+                height: 35px;
+            }
+
+            .youtube-text {
+                font-size: 1.1rem;
+                display: flex;
+            }
+
+            .youtube-text sup {
+                font-size: 0.6rem;
+                display: flex;
+                padding-left: 5px;
+            }
+
+            .search-bar #search-input {
+                width: 225px;
+                height: 22px;
+                border-radius: 20px 0 0 20px;
+                transition: width 0.9s ease;
+            }
+
+            .search-bar #button-search {
+                height: 40px;
+                width: 54px;
+                border-radius: 0 20px 20px 0;
+                border: 1px solid #ccc;
+                border-left: none;
+            }
+
+            .search-bar img {
+                margin-top: -8px;
+                margin-right: 5px;
+            }
+
+            .search-bar #keyboard {
+                display: flex;
+                position: absolute;
+                margin-left: 13.2rem;
+                color: #20202088;
+                cursor: pointer;
+            }
+
+            .search-bar #microphone {
+                border-radius: 40px;
+                background-color: #f1f1f1;
+                width: 6px;
+                height: 9px;
+                margin-left: 12px;
+                padding: 15px;
+                align-items: center;
+                display: flex;
+                justify-content: center;
+                cursor: pointer;
+                transition: background-color 0.3s, box-shadow 0.2s;
+            }
+
+            .search-bar #microphone:hover {
+                background-color: #d4d3d3b4;
+                box-shadow: 0 0 0 3px #d4d3d3b4; 
+
+            }
+
+            .search-bar #microphone:active {
+                box-shadow: 0 0 0 0.1px #c4c2c2c9;
+            }
+
+            .top-bar-right {
+                display: flex;
+                margin-left: -0.5rem;
+            }
+
+            .top-bar-create {
+                width: 6px;
+                height: 9px;
+                margin-right: 10px;
+                margin-left: 10px;
+            }
+
+            .top-bar-create #button-create {
+                border-radius: 15px;
+                border: none;
+                background-color: #f1f1f1;
+                display: flex;
+                padding: 11px 10px;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                height: 38px;
+                transition: background-color 0.3s, box-shadow 0.2s;
+                cursor: pointer;
+            }
+
+            .top-bar-create #button-create:hover {
+                background-color: #d4d3d3b4;
+                box-shadow: 0 0 0 3px #d4d3d3b4;
+            }
+
+            .top-bar-create #button-create:active {
+                box-shadow: 0 0 0 0.1px #c4c2c2c9;
+            }
+
+            .top-bar-create #button-create .icon-create-top-bar {
+                font-size: 1.7rem;
+                color: #202020;
+            }
+
+            .top-bar-create #button-create .text-create-top-bar {
+                font-weight: bold;
+            }
+
+            .notification {
+                display: flex;
+                margin-left: 13px;
+                transition: background-color 0.3s, box-shadow 0.2s;
+                cursor: pointer;
+                border-radius: 20px;
+                width: 30px;
+                height: 30px;
+            }
+
+            .notification:hover {
+                background-color: #d4d3d3b4;
+                box-shadow: 0 0 0 3px #d4d3d3b4;
+            }
+
+            .notification:active {
+                box-shadow: 0 0 0 0.1px #c4c2c2c9;
+            }
+
+            .notification i {
+                font-size: 1.5rem;
+                color: #202020;
+            }
+
+            .notification .badge {
+                background-color: red;
+                color: white;
+                border-radius: 50%;
+                padding: 2px 5px;
+                height: 17px;
+                font-size: 0.8rem;
+                display: flex;
+                margin-top: -6px;
+                margin-left: -10px;
+            }
+
+            .logo-dev {
+                display: flex;
+                padding: 9px;
+                cursor: pointer;
+                margin-left: 6px;
+            }
+        }
+
+            @media (min-width: 1025px) and (max-width: 1440px) {
+                .menu-icon {
+                    width: 16px;
+                    height: 15px;
+                    padding: 10px;
+                    background-color: #b9ad05;
+                }
+
+                .youtube-logo img {
+                    width: 35px;
+                    height: 35px;
+                }
+
+                .youtube-text {
+                    font-size: 1.1rem;
+                    display: flex;
+                }
+
+                .youtube-text sup {
+                    font-size: 0.6rem;
+                    display: flex;
+                    padding-left: 5px;
+                }
+
+                .search-bar #search-input {
+                    width: 300px;
+                    height: 22px;
+                    border-radius: 20px 0 0 20px;
+                    transition: width 0.9s ease;
+                }
+
+                .search-bar #button-search {
+                    height: 40px;
+                    width: 54px;
+                    border-radius: 0 20px 20px 0;
+                    border: 1px solid #ccc;
+                    border-left: none;
+                }
+
+                .search-bar img {
+                    margin-top: -8px;
+                    margin-right: 5px;
+                }
+
+                .search-bar #keyboard {
+                    display: flex;
+                    position: absolute;
+                    margin-left: 17.9rem;
+                    color: #20202088;
+                    cursor: pointer;
+                }
+
+                .search-bar #microphone {
+                    border-radius: 40px;
+                    background-color: #f1f1f1;
+                    width: 6px;
+                    height: 9px;
+                    margin-left: 12px;
+                    padding: 15px;
+                    align-items: center;
+                    display: flex;
+                    justify-content: center;
+                    cursor: pointer;
+                    transition: background-color 0.3s, box-shadow 0.2s;
+                }
+
+                .search-bar #microphone:hover {
+                    background-color: #d4d3d3b4;
+                    box-shadow: 0 0 0 3px #d4d3d3b4; 
+                }
+
+                .search-bar #microphone:active {
+                    box-shadow: 0 0 0 0.1px #c4c2c2c9;
+                }
+
+                .top-bar-right {
+                    display: flex;
+                    margin-left: -0.5rem
+                }
+
+                .top-bar-create {
+                    width: 6px;
+                    height: 9px;
+                    margin-right: 10px;
+                    margin-left: 10px;
+                }
+
+                .top-bar-create #button-create {
+                    border-radius: 15px;
+                    border: none;
+                    background-color: #f1f1f1;
+                    display: flex;
+                    padding: 11px 10px;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 8px;
+                    height: 38px;
+                    transition: background-color 0.3s, box-shadow 0.2s;
+                    cursor: pointer;
+                }
+
+                .top-bar-create #button-create:hover {
+                    background-color: #d4d3d3b4;
+                    box-shadow: 0 0 0 3px #d4d3d3b4;
+                }
+
+                .top-bar-create #button-create:active {
+                    box-shadow: 0 0 0 0.1px #c4c2c2c9;
+                }
+
+                .top-bar-create #button-create .icon-create-top-bar {
+                    font-size: 1.7rem;
+                    color: #202020;
+                }
+
+                .top-bar-create #button-create .text-create-top-bar {
+                    font-weight: bold;
+                }
+
+                .notification {
+                    display: flex;
+                    margin-left: 13px;
+                    transition: background-color 0.3s, box-shadow 0.2s;
+                    cursor: pointer;
+                    border-radius: 20px;
+                    width: 30px;
+                    height: 30px;
+                }
+
+                .notification:hover {
+                    background-color: #d4d3d3b4;
+                    box-shadow: 0 0 0 3px #d4d3d3b4;
+                }
+
+                .notification:active {
+                    box-shadow: 0 0 0 0.1px #c4c2c2c9;
+                }
+
+                .notification i {
+                    font-size: 1.5rem;
+                    color: #202020;
+                }
+
+                .notification .badge {
+                    background-color: red;
+                    color: white;
+                    border-radius: 50%;
+                    padding: 2px 5px;
+                    height: 17px;
+                    font-size: 0.8rem;
+                    display: flex;
+                    margin-top: -6px;
+                    margin-left: -10px;
+                }
+
+                .logo-dev {
+                    display: flex;
+                    padding: 9px;
+                    cursor: pointer;
+                    margin-left: 6px;
+                }
+            }
+
+            @media (min-width: 1441px) {
+                .menu-icon {
+                    width: 16px;
+                    height: 15px;
+                    padding: 10px;
+                    background-color: #190af3;
+                }
+
+                .youtube-logo img {
+                    width: 36px;
+                    height: 36px;
+                }
+
+                .youtube-text {
+                    font-size: 1.1rem;
+                    display: flex;
+                }
+
+                .youtube-text sup {
+                    font-size: 0.6rem;
+                    display: flex;
+                    padding-left: 5px;
+                }
+
+                .search-bar #search-input {
+                    width: 450px;
+                    height: 22px;
+                    border-radius: 20px 0 0 20px;
+                    transition: width 0.9s ease;
+                }
+
+                .search-bar #button-search {
+                    height: 40px;
+                    width: 54px;
+                    border-radius: 0 20px 20px 0;
+                    border: 1px solid #ccc;
+                    border-left: none;
+                }
+
+                .search-bar img {
+                    margin-top: -8px;
+                    margin-right: 5px;
+                }
+
+                .search-bar #keyboard {
+                    display: flex;
+                    position: absolute;
+                    margin-left: 27.3rem;
+                    color: #20202088;
+                    cursor: pointer;
+                }
+
+                .search-bar #microphone {
+                    border-radius: 40px;
+                    background-color: #f1f1f1;
+                    width: 6px;
+                    height: 9px;
+                    margin-left: 12px;
+                    padding: 15px;
+                    align-items: center;
+                    display: flex;
+                    justify-content: center;
+                    cursor: pointer;
+                    transition: background-color 0.3s, box-shadow 0.2s;
+                }
+
+                .search-bar #microphone:hover {
+                    background-color: #d4d3d3b4;
+                    box-shadow: 0 0 0 3px #d4d3d3b4; 
+                }
+
+                .search-bar #microphone:active {
+                    box-shadow: 0 0 0 0.1px #c4c2c2c9;
+                }
+
+                .top-bar-right {
+                    display: flex;
+                }
+
+                .top-bar-create {
+                    width: 6px;
+                    height: 9px;
+                    margin-right: 10px;
+                    margin-left: 10px;
+                }
+
+                .top-bar-create #button-create {
+                    border-radius: 15px;
+                    border: none;
+                    background-color: #f1f1f1;
+                    display: flex;
+                    padding: 11px 10px;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 8px;
+                    height: 38px;
+                    transition: background-color 0.3s, box-shadow 0.2s;
+                    cursor: pointer;
+                }
+
+                .top-bar-create #button-create:hover {
+                    background-color: #d4d3d3b4;
+                    box-shadow: 0 0 0 3px #d4d3d3b4;
+                }
+
+                .top-bar-create #button-create:active {
+                    box-shadow: 0 0 0 0.1px #c4c2c2c9;
+                }
+
+                .top-bar-create #button-create .icon-create-top-bar {
+                    font-size: 1.7rem;
+                    color: #202020;
+                }
+
+                .top-bar-create #button-create .text-create-top-bar {
+                    font-weight: bold;
+                }
+
+                .notification {
+                    display: flex;
+                    margin-left: 13px;
+                    transition: background-color 0.3s, box-shadow 0.2s;
+                    cursor: pointer;
+                    border-radius: 20px;
+                    width: 30px;
+                    height: 30px;
+                }
+
+                .notification:hover {
+                    background-color: #d4d3d3b4;
+                    box-shadow: 0 0 0 3px #d4d3d3b4;
+                }
+
+                .notification:active {
+                    box-shadow: 0 0 0 0.1px #c4c2c2c9;
+                }
+
+                .notification i {
+                    font-size: 1.5rem;
+                    color: #202020;
+                }
+
+                .notification .badge {
+                    background-color: red;
+                    color: white;
+                    border-radius: 50%;
+                    padding: 2px 5px;
+                    height: 17px;
+                    font-size: 0.8rem;
+                    display: flex;
+                    margin-top: -6px;
+                    margin-left: -10px;
+                }
+
+                .logo-dev {
+                    display: flex;
+                    padding: 9px;
+                    cursor: pointer;
+                    margin-left: 6px;
+                }
+            }
+    </style>
+</head>
+
+<body>
+    <header>
+        <section class="top-bar">
+            <section class="top-bar-left">
+                <div class="menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <section class="youtube-logo">
+                    <img src="assets/Images/Ícone Youtube.png" alt="Logo do Youtube">
+                    <span class="youtube-text">YouTube <sup> BR </sup></span>
+                </section>
+            </section>
+
+            <section class="search-bar">
+                <form action="https://www.youtube.com/results" method="get">
+                    <section id="input-button-search">
+                        <input type="text" name="search_query" placeholder="Pesquisar" id="search-input">
+                        <button id="button-search" type="submit" disabled>
+                            <img src="assets/Images/Ícone lupa 2.png" alt="Ícone de pesquisa" width="20" height="16">
+                        </button> 
+                    </section>
+                </form>
+                <span id="microphone" class="material-icons microphone" title="Microfone">mic</span>
+                <span id="keyboard" class="material-icons keyboard" title="Teclado virtual">keyboard</span>
+            </section>
+            <section class="top-bar-right">
+                <section class="top-bar-create">
+                    <button id="button-create">
+                        <span class="icon-create-top-bar">+</span>
+                        <span class="text-create-top-bar">Criar</span>
+                    </button>
+                </section>
+
+                <div class="notification">
+                    <i class="material-icons">notifications_none</i>
+                    <span class="badge">9+</span>
+                </div>
+                <section class="logo-dev">
+                    <picture>
+                        <a href="https://github.com/Joaoflavio33" target="_blank"><img src="assets/Images/Ícones top logo.png" alt="Ícone do canal do desenvolvedor"></a>
+                    </picture>
+                </section>
+            </section>
+        </section>
+    </header>
+</body>
+</html>

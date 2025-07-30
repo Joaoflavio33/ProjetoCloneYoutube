@@ -30,29 +30,33 @@
 
             <section class="search-bar">
                 <form action="https://www.youtube.com/results" method="get">
-                    <input type="text" name="search_query" placeholder="Pesquisar" id="search-input">
-                    <button id="button-search" type="submit" disabled>
-                        <img src="assets/Images/Ícone lupa 2.png" alt="Ícone de pesquisa" width="20" height="16">
-                    </button> 
+                    <section id="input-button-search">
+                        <input type="text" name="search_query" placeholder="Pesquisar" id="search-input">
+                        <button id="button-search" type="submit" disabled>
+                            <img src="assets/Images/Ícone lupa 2.png" alt="Ícone de pesquisa" width="20" height="16">
+                        </button> 
+                    </section>
                 </form>
                 <span id="microphone" class="material-icons microphone" title="Microfone">mic</span>
                 <span id="keyboard" class="material-icons keyboard" title="Teclado virtual">keyboard</span>
             </section>
-             <section class="top-bar-create">
-                <button id="button-create">
-                    <span class="icon-create-top-bar">+</span>
-                    <span class="text-create-top-bar">Criar</span>
-                </button>
-            </section>
+            <section class="top-bar-right">
+                <section class="top-bar-create">
+                    <button id="button-create">
+                        <span class="icon-create-top-bar">+</span>
+                        <span class="text-create-top-bar">Criar</span>
+                    </button>
+                </section>
 
-             <div class="notification">
-                <i class="material-icons">notifications_none</i>
-                <span class="badge">9+</span>
-            </div>
-            <section class="logo-dev">
-                <picture>
-                    <img src="assets/Images/Ícones top logo.png" alt="Ícone do canal do desenvolvedor">
-                </picture>
+                <div class="notification">
+                    <i class="material-icons">notifications_none</i>
+                    <span class="badge">9+</span>
+                </div>
+                <section class="logo-dev">
+                    <picture>
+                        <a href="https://github.com/Joaoflavio33" target="_blank"><img src="assets/Images/Ícones top logo.png" alt="Ícone do canal do desenvolvedor"></a>
+                    </picture>
+                </section>
             </section>
         </section>
     </header>
@@ -84,7 +88,7 @@
 
             <section class="interactive-buttons-right">
                 <button id="button-3">
-                    <span class="material-icons">thumb_up</span>
+                    <span id="icon-like" class="material-icons">thumb_up</span>
                     <span class="likes">2,4 mil</span>
                     <span class="vertical-line"></span>
                 </button>
