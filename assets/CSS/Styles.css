@@ -566,23 +566,15 @@ main {
     max-width: 400px;
 }
 
-/* Layout desktop - segunda coluna */
-@media (min-width: 1024px) {
-    .second-column {
-        width: 400px;
-        flex-shrink: 0;
-    }
+main {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 32px;
+    padding: 24px 32px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
 }
-
-    main {
-        flex-direction: row;
-        align-items: flex-start;
-        gap: 32px;
-        padding: 24px 32px;
-        max-width: 1400px;
-        margin-left: auto;
-        margin-right: auto;
-    }
 
 .video {
     display: flex;
@@ -668,175 +660,192 @@ main {
 
 /* Media queries responsivas */
 
-/* Mobile (até 480px) */
-@media (max-width: 480px) {
+/* Mobile (até 698px) */
+@media (max-width: 698px) {
     .top-bar {
-        padding: 8px 12px;
+        padding: 6px 10px;
         width: 100%;
-        height: 48px;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 6px;
     }
-    
+
     .menu-icon {
-        padding: 6px;
-        margin-right: 8px;
+        padding: 4px;
+        margin: 0;
     }
-    
+
     .menu-icon span {
-        width: 16px;
-        height: 1px;
-    }
-    
-    .youtube-logo img {
-        width: 28px;
-        height: 28px;
-        margin-left: 8px;
+        width: 18px;
+        height: 1.5px;
     }
 
     .youtube-logo {
-        margin-left: -18px;
+        display: flex;
+        align-items: center;
+        margin: 0;
     }
-    
+
+    .youtube-logo img {
+        width: 26px;
+        height: 26px;
+        margin: 0;
+    }
+
     .youtube-text {
-        font-size: 0.875rem;
+        font-size: 0.85rem;
+        margin-left: 4px;
     }
-    
+
     .youtube-text sup {
-        font-size: 0.5rem;
+        font-size: 0.55rem;
     }
-    
+
     .search-bar {
-        margin: 0 -18px;
         flex: 1;
+        margin: 0 6px;
+        display: flex;
+        align-items: center;
     }
-    
+
     .search-bar input[type="text"] {
         width: 100%;
-        width: 79px;
-        font-size: 0.875rem;
-        padding: 6px 8px;
-        border-radius: 20px;
-        margin-left: 8px;
+        font-size: 0.85rem;
+        padding: 6px 10px;
+        border-radius: 18px;
     }
 
     #button-search {
         display: none;
     }
-    
+
     #microphone {
-        padding: 8px;
+        padding: 6px;
         margin-left: 4px;
+        font-size: 1.1rem;
     }
-    
+
     #keyboard {
         display: none;
     }
-    
-    .top-bar-create #button-create {
-        display: none;
-    }
-    
+
+    .top-bar-create #button-create,
     .top-bar-create #button-create .text-create-top-bar {
         display: none;
     }
-    
+
     .notification {
-        width: 48px;
-        height: 48px;
-        margin-left: -3px;
-    }
-    
-    .notification i {
-        font-size: 1.25rem;
-    }
-    
-    .logo-dev {
-        padding: 6px;
-        margin-left: -16px;
         width: 40px;
         height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
-    
+
+    .notification i {
+        font-size: 1.2rem;
+    }
+
+    .logo-dev {
+        padding: 4px;
+        width: 36px;
+        height: 36px;
+        margin: 0;
+    }
+
+    /* --- Ajuste do layout principal --- */
     main {
-        padding: 16px;
+        display: flex;
+        flex-direction: column; /* deixa o vídeo e a sidebar em coluna */
+        padding: 12px;
         gap: 16px;
     }
-    
-    .video-description h2 {
-        font-size: 18px;
+
+    .main-video {
+        width: 100%;
     }
-    
+
+    .second-column {
+        width: 100%;
+        margin-top: 12px; /* dá espaço entre vídeo e recomendações */
+    }
+
+    /* --------------------------------- */
+
+    .video-description h2 {
+        font-size: 16px;
+    }
+
     .interactive-buttons-container {
         flex-direction: column;
         align-items: stretch;
         gap: 8px;
     }
-    
+
     .interactive-buttons-left,
     .interactive-buttons-right {
         gap: 8px;
         justify-content: center;
+        flex-wrap: wrap;
     }
-    
+
     #button-1, #button-2 {
-        padding: 8px 12px;
+        padding: 8px 10px;
         font-size: 12px;
         height: 32px;
         flex: 1;
-        width: auto;
     }
-    
-    #button-3 {
-        border-radius: 18px;
-        width: auto;
-        margin-left: 0;
-    }
-    
+
+    #button-3,
     #button-4 {
         border-radius: 18px;
-        width: auto;
-        margin-left: 0;
+        width: 100%;
+        margin: 0;
     }
-    
+
     #button-5, #button-6, #button-7 {
-        padding: 6px 10px;
+        padding: 6px 8px;
         font-size: 12px;
-        height: 32px;
+        height: 30px;
     }
-    
+
     .video-stats {
-        padding: 12px;
-        min-height: auto;
-        height: auto;
-        margin: 0 8px;
+        padding: 10px;
+        margin: 0 6px;
+        font-size: 12px;
     }
-    
+
     .video-stats .views {
         font-size: 12px;
-        margin-bottom: 8px;
+        margin-bottom: 6px;
     }
-    
+
     .video-stats .description {
         font-size: 12px;
         line-height: 1.4;
     }
-    
+
     .thumbnail {
-        width: 120px;
-        height: 67px;
+        width: 100%;
+        max-width: 140px;
+        height: auto;
+        aspect-ratio: 16 / 9;
     }
-    
+
     .video-info .title {
         font-size: 12px;
     }
-    
+
     .video-info .channel,
     .video-info .views {
         font-size: 11px;
     }
 }
 
-/* Tablet pequeno (481px - 768px) */
-@media (min-width: 481px) and (max-width: 767px) {
+/* Tablets (699px - 1023px) */
+@media (min-width: 699px) and (max-width: 1023px) {
     .top-bar {
         padding: 10px 16px;
         height: 52px;
@@ -922,8 +931,8 @@ main {
     }
 }
 
-/* Tablet (769px - 1023px) */
-@media (min-width: 769px) and (max-width: 1023px) {
+/* notebook (1024px - 1280px) */
+@media (min-width: 1024px) and (max-width: 1280px) {
     .top-bar {
         padding: 10px 20px;
         height: 56px;
@@ -967,8 +976,8 @@ main {
     }
 }
 
-/* Desktop pequeno (1024px - 1280px) */
-@media (min-width: 1024px) and (max-width: 1280px) {
+/* notebook grande (1281px - 1440px) */
+@media (min-width: 1281px) and (max-width: 1440px) {
     .youtube-logo img {
         width: 120px;
         height: 18px;
@@ -989,41 +998,6 @@ main {
     .thumbnail {
         width: 168px;
         height: 94px;
-    }
-}
-
-/* Desktop médio (1281px - 1440px) */
-@media (min-width: 1281px) and (max-width: 1440px) {
-    .youtube-logo img {
-        width: 120px;
-        height: 18px;
-    }
-    
-    .search-bar input[type="text"] {
-        width: 400px;
-    }
-    
-    main {
-        max-width: 1400px;
-    }
-    
-    .second-column {
-        width: 400px;
-    }
-    
-    .video-stats {
-        padding: 18px;
-        margin: 0 20px;
-    }
-    
-    .video-stats .views {
-        font-size: 15px;
-        margin-bottom: 14px;
-    }
-    
-    .video-stats .description {
-        font-size: 15px;
-        line-height: 1.6;
     }
 }
 
