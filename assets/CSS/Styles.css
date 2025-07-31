@@ -767,6 +767,10 @@ main {
         width: 100%;
     }
 
+    .main-video iframe {
+        margin-top: 30px;
+    }
+
     .second-column {
         width: 100%;
         margin-top: 12px; /* dá espaço entre vídeo e recomendações */
